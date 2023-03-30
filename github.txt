@@ -7,4 +7,8 @@ like the empty
 
 Adding riles
 Firewalls can commonly be configured in one of two ways, either set the default rule
-to accept and then block any unwanted traffic wit
+to accept and then block any unwanted traffic with specific rules, or by using the rules to define allowed traffic and blocking everything else. The latter is often the recommended approach, as it allows pre-emptively blocking traffic, rather than having to reactively reject connections that should not be attempting to access your cloud server.
+
+To begin using iptables, you should first add the rules for allowed inbound traffic for the services you require. Iptables can track the state of the connection, so use the command below to allow established connections continue.
+
+sudo iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
