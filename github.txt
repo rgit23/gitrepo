@@ -1,0 +1,10 @@
+iptables allows configuring the tables provided by the Linux kernel firewall
+
+Listing current rules
+sudo iptables -L
+This will print out a list of three chains, input, forward and output,
+like the empty
+
+Adding riles
+Firewalls can commonly be configured in one of two ways, either set the default rule
+to accept and then block any unwanted traffic wit
